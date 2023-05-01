@@ -36,7 +36,7 @@ Within each page, the djinn and summons will be separated into "parts", referenc
 * chapter - Integer (which part of the game is it located?)
 * location - String (briefly states where it is found)
 * description - String (a more detailed explanation of how to get it)
-** NOTE: most descriptions will tell you how to get to the collectable if it is non-obvious. Some collectables can be found easily by traversing a dungeon or town, so may not have as detailed a description. The guide will not say how to solve puzzles, either, but will mention what Psynergy is required.
+    * NOTE: most descriptions will tell you how to get to the collectable if it is non-obvious. Some collectables can be found easily by traversing a dungeon or town, so may not have as detailed a description. The guide will not say how to solve puzzles, either, but will mention what Psynergy is required.
 * picture - String (link to picture to display associated with the item)
 
 ## Django Views
@@ -68,14 +68,14 @@ Within each page, the djinn and summons will be separated into "parts", referenc
 
 ### Golden Sun
 * Giant box one the middle shows information about the currently-selected collectable.
-** Includes name, a picture, location, and description of how to get it.
-** Information changes whenever another collectable is selected.
+    * Includes name, a picture, location, and description of how to get it.
+    * Information changes whenever another collectable is selected.
 * A line of collectables that can be selected, corresponding to the game.
-** Scrollable. Would prefer arrows for scrolling instead of a scrolling bar. Will determine when reviewing React and CSS how to do so.
+    * Scrollable. Would prefer arrows for scrolling instead of a scrolling bar. Will determine when reviewing React and CSS how to do so.
 * A series of buttons that limits the amounts and types of selectable collectables. Could also be a dropdown menu.
-** All
-** By chapter (1, 2, etc.)
-** By type (Venus, Mars, etc.)
+    * All
+    * By chapter (1, 2, etc.)
+    * By type (Venus, Mars, etc.)
 
 ### Golden Sun: The Lost Age
 * Identical to the *Golden Sun* page, but using data and images for *The Lost Age*.
