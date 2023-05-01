@@ -27,9 +27,61 @@ Within each page, the djinn and summons will be separated into "parts", referenc
 * This website does not act as a walkthrough, but a guide for specific items found in each game.
 * This website will only tell the locations of djinn and summons, not show.
 
-## Models
+## Django Models
+
+### Collectable
+* item - Integer (1 = Venus, 2 = Mars, 3 = Jupiter, 4 = Mercury, 5 = Summon)
+* name - String (name of collectable)
+* game - Integer (1 = *Golden Sun*, 2 = *The Lost Age*, 3 = *Dark Dawn*)
+* chapter - Integer (which part of the game is it located?)
+* location - String (briefly states where it is found)
+* description - String (a more detailed explanation of how to get it)
+** NOTE: most descriptions will tell you how to get to the collectable if it is non-obvious. Some collectables can be found easily by traversing a dungeon or town, so may not have as detailed a description. The guide will not say how to solve puzzles, either, but will mention what Psynergy is required.
+* picture - String (link to picture to display associated with the item)
+
+## Django Views
+* NOTE: all requests use the GET method; the Django server does not utilize user data in any manner.
+
+"/api"
+* Gets all Djinn and Summons in the database.
+* Responds with JSON list, sorted by id.
+
+"/api/<int: game>"
+* Gets all Djinn and Summons for a particular game.
+* Responds with JSON list, sorted by id.
+
+"/api/<int: game>/chapter/<int: chapter>"
+* Gets all Djinn and Summons for a particular game.
+* Filters by chapter.
+* Responds with JSON list, sorted by id.
+
+"/api/<int: game>/type/<int: coltype>"
+* Gets all Djinn and Summons for a particular game.
+* Filters by coltype.
+* Responds with JSON list, sorted by id.
 
 ## Website Layout
+
+### Home/Index Page
+* Introductory page to the app and its purposes.
+* Links to all three games (in the header, which is shared between all pages).
+
+### Golden Sun
+* Giant box one the middle shows information about the currently-selected collectable.
+** Includes name, a picture, location, and description of how to get it.
+** Information changes whenever another collectable is selected.
+* A line of collectables that can be selected, corresponding to the game.
+** Scrollable. Would prefer arrows for scrolling instead of a scrolling bar. Will determine when reviewing React and CSS how to do so.
+* A series of buttons that limits the amounts and types of selectable collectables. Could also be a dropdown menu.
+** All
+** By chapter (1, 2, etc.)
+** By type (Venus, Mars, etc.)
+
+### Golden Sun: The Lost Age
+* Identical to the *Golden Sun* page, but using data and images for *The Lost Age*.
+
+### Golden Sun: Dark Dawn
+* Identical to the *Golden Sun* page, but using data and images for *Dark Dawn*.
 
 ## Milestones
 * Design website. (1-2 days)
