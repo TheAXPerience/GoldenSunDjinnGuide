@@ -2,20 +2,25 @@ from django.db import models
 
 # Create your models here.
 class Collectable(models.Model):
-    name = CharField(
+    name = models.CharField(
         max_length=12
     )
 
-    game = SmallIntegerField()
+    game = models.SmallIntegerField()
 
-    coltype = SmallIntegerField()
+    coltype = models.SmallIntegerField()
 
-    chapter = SmallIntegerField()
+    chapter = models.SmallIntegerField()
 
-    location = CharField(
+    location = models.CharField(
         max_length=100
     )
 
-    description = TextField()
+    description = models.TextField()
 
-    picture = FilePathField()
+    picture_url = models.CharField(
+        max_length=100
+    )
+
+    def get_picture_url(self):
+        return '/static/' + self.picture_url
