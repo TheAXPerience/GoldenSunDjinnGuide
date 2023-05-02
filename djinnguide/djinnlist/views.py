@@ -10,7 +10,7 @@ from rest_framework.response import Response
 def index(request):
     game = request.GET.get('game', 0)
     coltype = request.GET.get('type', 0)
-    chapter = request.GET.get('chapter, 0)
+    chapter = request.GET.get('chapter', 0)
     return Response(f"Index - {game if game>0 else ''} - {coltype if coltype>0 else ''} - {chapter if chapter>0 else ''}")
 
 """
