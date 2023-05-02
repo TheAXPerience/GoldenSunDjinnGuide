@@ -24,3 +24,14 @@ class Collectable(models.Model):
 
     def get_picture_url(self):
         return '/static/' + self.picture_url
+
+    def serialize(self):
+        return {
+            "name": self.name,
+            "game": self.game,
+            "coltype": self.coltype,
+            "chapter": self.chapter,
+            "location": self.location,
+            "description": self.description,
+            "pic_url": self.get_picture_url()
+        }
