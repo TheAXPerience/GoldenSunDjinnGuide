@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 class Collectable(models.Model):
     name = models.CharField(
-        max_length=12
+        max_length=20
     )
 
     game = models.SmallIntegerField()
@@ -23,7 +23,7 @@ class Collectable(models.Model):
     )
 
     def get_picture_url(self):
-        return '/static/' + self.picture_url
+        return '/assets/' + self.picture_url
 
     def serialize(self):
         return {
