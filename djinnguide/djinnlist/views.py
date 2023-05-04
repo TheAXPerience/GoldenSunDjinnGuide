@@ -3,35 +3,40 @@ from rest_framework import status
 from rest_framework.decorators import api_view, renderer_classes
 from rest_framework.renderers import JSONRenderer
 from rest_framework.response import Response
-from .models import Collectable
+from .models import Collectible
 
 # Create your views here.
 @api_view(["GET"])
 @renderer_classes([JSONRenderer])
 def index(request):
-    game = int(request.GET.get('game', 0))
-    coltype = int(request.GET.get('type', 0))
-    chapter = int(request.GET.get('chapter', 0))
+    game = int(request.GET.get('game', '0'))
+    coltype = int(request.GET.get('type', '0'))
+    chapter = int(request.GET.get('chapter', '0'))
 
     # begin query on Collectable model
+    query = Collectible.objects.all()
 
     # filter by game
     if game > 0:
-        pass
+        query = query.filter(game=game)
 
     # filter by coltype (type)
     if coltype > 0:
-        pass
+        query = query.filter(coltype=coltype)
 
     # filter by chapter
     if chapter > 0:
-        pass
+        query = query.filter(chapter=chapter)
 
-    ans = []
+    query = query.order_by('id')
 
     # go through query and serialize to ans
+    context = []
 
-    ret = Response(ans)
+    for c in query:
+        context.append(c.serialize())
+
+    ret = Response(context)
 
     # may need CORS header?
 
