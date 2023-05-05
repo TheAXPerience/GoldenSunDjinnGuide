@@ -12,9 +12,9 @@ def run():
             for row in reader:
                 djinn = Collectible(
                     name=row[0],
-                    game=row[1],
-                    coltype=row[2],
-                    chapter=row[3],
+                    game=int(row[1]),
+                    coltype=int(row[2]),
+                    chapter=int(row[3]),
                     location=row[4],
                     description=row[5],
                     picture_url=row[6]
