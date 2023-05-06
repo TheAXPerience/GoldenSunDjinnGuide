@@ -22,5 +22,5 @@ def run():
 
                 djinn.save()
                 print(djinn)
-    except(FileNotFoundException):
+    except(FileNotFoundError):
         print('Could not open the djinnlist.csv file in the djinnlist folder.')

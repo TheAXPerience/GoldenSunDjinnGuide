@@ -10,7 +10,7 @@ from .models import Collectible
 @renderer_classes([JSONRenderer])
 def index(request):
     game = int(request.GET.get('game', '0'))
-    coltype = int(request.GET.get('type', '0'))
+    coltype = int(request.GET.get('coltype', '0'))
     chapter = int(request.GET.get('chapter', '0'))
 
     # begin query on Collectable model
@@ -40,7 +40,7 @@ def index(request):
 
     # may need CORS header?
 
-    return Response(f"Index - {game if game>0 else ''} - {coltype if coltype>0 else ''} - {chapter if chapter>0 else ''}")
+    return ret
 
 """
 def by_game(request, game):
