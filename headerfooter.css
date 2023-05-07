@@ -1,0 +1,54 @@
+html, body {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    font-size: 18px;
+    font-family: monospace;
+}
+
+header {
+    background-color: #E8E8E8;
+    padding: 0;
+    overflow: auto;
+}
+
+header nav {
+    display: flex;
+    justify-content: right;
+}
+
+header nav a {
+    width: 25%;
+    text-align: center;
+    border-left: black 1px solid;
+    border-bottom: black 1px solid;
+    padding: 16px;
+    margin: 0px;
+    display: block;
+    color: black;
+    font-size: 0.9em;
+}
+
+header nav a:hover {
+    background-color: #FFFFFF;
+}
+
+footer {
+    background-color: #E8E8E8;
+    padding: 8px;
+    padding-bottom: 16px;
+    border-top: black 1px solid;
+}
+
+footer p {
+    font-size: 0.8rem;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}

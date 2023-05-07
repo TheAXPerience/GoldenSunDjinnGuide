@@ -1,0 +1,88 @@
+.body {
+    padding: 8px 10%;
+}
+
+.logo {
+    padding: 8px;
+    margin: 0px;
+    text-align: center;
+}
+
+.logo img {
+    height: 128px;
+    width: auto;
+    image-rendering: pixelated;
+}
+
+#dropdown {
+    padding: 4px;
+    text-align: center;
+}
+
+#dropdown label {
+    line-height: 36px;
+}
+
+#dropdown select {
+    padding: 8px;
+    text-align: center;
+    background-color: aliceblue;
+}
+
+.djinn {
+    text-align: center;
+    width: 90%;
+    padding: 8px;
+    margin: auto;
+    margin-bottom: 4px;
+}
+
+.djinn section {
+    display: flex;
+}
+
+.djinn img {
+    margin: auto;
+    width: 64px;
+    height: auto;
+}
+
+.djinn .image {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.djinn .info {
+    width: 70%;
+}
+
+.djinn p {
+    text-align: right;
+}
+
+.venus {
+    border: gold 4px solid;
+    border-radius: 8px;
+}
+
+.mercury {
+    border: aqua 4px solid;
+    border-radius: 8px;
+}
+
+.mars {
+    border: orangered 4px solid;
+    border-radius: 8px;
+}
+
+.jupiter {
+    border: mediumpurple 4px solid;
+    border-radius: 8px;
+}
+
+.summon {
+    border: lightgrey 4px solid;
+    border-radius: 8px;
+}

@@ -1,0 +1,126 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="description" content="A guide for Djinn and Summons in the Golden Sun video game series" />
+        <link rel="stylesheet" href="headerfooter.css" />
+        <link rel="stylesheet" href="thelostage.css" />
+        <title>The Golden Sun Djinn Guide</title>
+    </head>
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="goldensun.html">Golden Sun</a>
+            <a href="thelostage.html">The Lost Age</a>
+            <a href="darkdawn.hmtl">Dark Dawn</a>
+        </nav>
+    </header>
+    <body>
+        <section class="logo">
+            <img src="assets/the_lost_age_logo.png" alt="Golden Sun: The Lost Age">
+        </section>
+        <section class="body dropdown" id="dropdown">
+            <label for="category">Choose a Category</label>
+            <br/>
+            <select name="category" id="category">
+                <option value="?game=2">All</option>
+                <optgroup label="Chapters">
+                    <option value="?game=2&chapter=2">1: Indra</option>
+                    <option value="?game=2&chapter=3">2: Osenia</option>
+                    <option value="?game=2&chapter=4">3: Gondowan</option>
+                    <option value="?game=2&chapter=5">4: The Great Eastern Sea</option>
+                    <option value="?game=2&chapter=6">5: The Great Western Sea</option>
+                    <option value="?game=2&chapter=7">6: The Northern Reaches</option>
+                </optgroup>
+                <optgroup label="Type">
+                    <option value="?game=2&coltype=1">Venus Djinn</option>
+                    <option value="?game=2&coltype=2">Mars Djinn</option>
+                    <option value="?game=2&coltype=3">Jupiter Djinn</option>
+                    <option value="?game=2&coltype=4">Mercury Djinn</option>
+                    <option value="?game=2&coltype=5">Summon Tablets</option>
+                </optgroup>
+            </select>
+        </section>
+        <section class="body" id="root">
+            <!-- this is where the Djinn and Summon data appears. -->
+            <!-- React will change this automatically when the dropdown menu changes. -->
+            <div class="djinn venus">
+                <h1>Echo</h1>
+                <section>
+                    <div class="image">
+                        <img src="assets/goldensun/venus_djinni.png" alt="Venus Djinni">
+                    </div>
+                    <div class="info">
+                        <p><b>Location</b>: World Map (outside of Daila)</p>
+                        <p>Echo will join automatically.</p>
+                    </div>
+                </section>
+            </div>
+            <div class="djinn mercury">
+                <h1>Fog</h1>
+                <section>
+                    <div class="image">
+                        <img src="assets/goldensun/mercury_djinni.png" alt="Mercury Djinni">
+                    </div>
+                    <div class="info">
+                        <p><b>Location</b>: Temple</p>
+                        <p>Fog can be found after obtaining the Lash psynergy and returning into the dungeon.</p>
+                    </div>
+                </section>
+            </div>
+            <div class="djinn jupiter">
+                <h1>Breath</h1>
+                <section>
+                    <div class="image">
+                        <img src="assets/goldensun/jupiter_djinni.png" alt="Jupiter Djinni">
+                    </div>
+                    <div class="info">
+                        <p><b>Location</b>: Shrine of the Sea God</p>
+                        <p>Breath can be found after obtaining the Lash psynergy and descending
+                            as deep into the dungeon as can be reached.</p>
+                    </div>
+                </section>
+            </div>
+            <div class="djinn mars">
+                <h1>Cannon</h1>
+                <section>
+                    <div class="image">
+                        <img src="assets/goldensun/mars_djinni.png" alt="Mars Djinni">
+                    </div>
+                    <div class="info">
+                        <p><b>Location</b>: Plateau</p>
+                        <p>Cannon can be found after obtaining the Pound psynergy and solving a Pound puzzle.</p>
+                    </div>
+                </section>
+            </div>
+            <div class="djinn summon">
+                <h1>Zagan</h1>
+                <section>
+                    <div class="image">
+                        <img src="assets/thelostage/zagan.png" alt="Zagan">
+                    </div>
+                    <div class="info">
+                        <p><b>Location</b>: Temple</p>
+                        <p>Zagan can be found in a cave to the west of the Dehkan Plateau and solving a Move puzzle.</p>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </body>
+    <footer>
+        <p>
+            <i>Golden Sun</i> is trademarked and copyrighted by Nintendo 2001-2023.
+        </p>
+        <p>
+            For more information about the <i>Golden Sun</i> series, visit
+            <a href="https://goldensunwiki.net">Golden Sun Universe</a>.
+        </p>
+        <p>
+            Djinn sprites for <i>Dark Dawn</i> are sourced from
+            <a href="https://www.goldensun-syndicate.net/dd/djinn/">Golden Sun Syndicate</a>.
+        </p>
+        <p>
+            All other sprites are sourced from
+            <a href="https://www.spriters-resource.com">Spriter's Resource</a>.
+        </p>
+    </footer>
+</html>
