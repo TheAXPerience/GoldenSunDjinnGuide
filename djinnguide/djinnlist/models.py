@@ -1,6 +1,8 @@
 from django.db import models
 
-# Create your models here.
+"""
+A Collectible is a Djinni or Summon Tablet found in-game. They are divided by game, by collectable type (coltype), and by chapter.
+"""
 class Collectible(models.Model):
     name = models.CharField(
         max_length=20
@@ -23,7 +25,7 @@ class Collectible(models.Model):
     )
 
     def get_picture_url(self):
-        return '/assets/' + self.picture_url
+        return './assets/' + self.picture_url
 
     def __str__(self):
         return f"{self.name} ({self.coltype}, {self.chapter}, {self.get_picture_url()}) - {self.game} @ {self.location}: {self.description}"
@@ -39,6 +41,11 @@ class Collectible(models.Model):
             "pic_url": self.get_picture_url()
         }
 
+"""
+A Category is a grouping of Collectables based on shared properties (game, coltype, chapter). This is all represented in the "query" parameter.
+
+Categories are used for Selection Lists to determine the types of URL queries React should send to Django.
+"""
 class Category(models.Model):
     game = models.SmallIntegerField()
     query = models.CharField(max_length=50)
