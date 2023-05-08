@@ -52,3 +52,6 @@ def by_type(request, game, coltype):
 def by_chapter(request, game, chapter):
     return Response("List by game, at certain part of game")
 """
+
+def get_category(request, game):
+    return Response("TODO")
