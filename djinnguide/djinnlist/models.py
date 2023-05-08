@@ -38,3 +38,18 @@ class Collectible(models.Model):
             "description": self.description,
             "pic_url": self.get_picture_url()
         }
+
+class Category(models.Model):
+    game = models.SmallIntegerField()
+    query = models.CharField(max_length=50)
+    label = models.CharField(max_length=50)
+
+    def __str__(self):
+        return f"{self.label} -> {self.query} @ {self.game}"
+
+    def serialize(self):
+        return {
+            "game": self.game,
+            "query": self.query,
+            "label": self.label
+        }
