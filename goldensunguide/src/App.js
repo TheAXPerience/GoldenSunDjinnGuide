@@ -1,25 +1,18 @@
 import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/home.js';
-import Categories from './pages/categories.js';
-import DjinnList from './pages/djinnlist.js';
+import GuidePage from './pages/guidepage.js';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+        <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/goldensun' element={<GuidePage game='goldensun' />} />
+            <Route path='thelostage' element={<GuidePage game='thelostage' />} />
+            <Route path='darkdawn' element={<GuidePage game='darkdawn' />} />
+        <Routes />
+    <Router />
   );
 }
 
