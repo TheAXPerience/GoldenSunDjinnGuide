@@ -1,4 +1,7 @@
 import './App.css';
+import Home from './pages/home.js';
+import Categories from './pages/categories.js';
+import DjinnList from './pages/djinnlist.js';
 
 function App() {
   return (
