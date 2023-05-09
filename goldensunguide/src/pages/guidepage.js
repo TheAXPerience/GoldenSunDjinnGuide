@@ -4,6 +4,10 @@ import DjinnList from 'djinn_list';
 
 export default const GuidePage = (props) => {
     return (
-        <p>{props.game}</p>
+        <>
+            <p>{props.game}</p>
+            <CategorySelector game={props.game} />
+            <DjinnList />
+        <>
     )
 }
