@@ -47,7 +47,7 @@ A Category is a grouping of Collectables based on shared properties (game, colty
 Categories are used for Selection Lists to determine the types of URL queries React should send to Django.
 """
 class Category(models.Model):
-    game = models.SmallIntegerField()
+    game = models.CharField(max_length=20)
     query = models.CharField(max_length=50)
     label = models.CharField(max_length=50)
 

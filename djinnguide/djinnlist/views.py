@@ -3,7 +3,7 @@ from rest_framework import status
 from rest_framework.decorators import api_view, renderer_classes
 from rest_framework.renderers import JSONRenderer
 from rest_framework.response import Response
-from .models import Collectible
+from .models import Collectible, Category
 
 # Create your views here.
 @api_view(["GET"])
@@ -53,5 +53,13 @@ def by_chapter(request, game, chapter):
     return Response("List by game, at certain part of game")
 """
 
-def get_category(request, game):
-    return Response("TODO")
+@api_view(["GET"])
+@renderer_classes([JSONRenderer])
+def get_category(request, title):
+    query = Category.objects.all().filter(game=title).order_by('id')
+    context = []
+    for c in query:
+        context.append(c.serialize())
+    ret = Response(context)
+
+    return ret
