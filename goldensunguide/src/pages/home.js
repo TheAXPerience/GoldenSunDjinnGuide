@@ -6,7 +6,7 @@ export default const Home = () => {
         <section class="body"> 
              <div> 
                  <Link to="/goldensun"> 
-                     <img src="../assets/golden_sun_logo.png" class="logo"/> 
+                     <img src="./assets/golden_sun_logo.png" class="logo"/> 
                  </Link> 
                  <p> 
                      <i>Golden Sun</i> is the first game in the series, featuring Isaac and his quest to chase down 
@@ -16,7 +16,7 @@ export default const Home = () => {
              </div> 
              <div> 
                  <Link to="/thelostage">
-                     <img src="../assets/the_lost_age_logo.png" class="logo"/> 
+                     <img src="./assets/the_lost_age_logo.png" class="logo"/> 
                  </Link> 
                  <p> 
                      <i>Golden Sun: The Lost Age</i> is the second game in the series, featuring Felix and his quest 
@@ -26,7 +26,7 @@ export default const Home = () => {
              </div> 
              <div> 
                  <Link to="/darkdawn"> 
-                     <img src="../assets/dark_dawn_logo.png" class="logo"/> 
+                     <img src="./assets/dark_dawn_logo.png" class="logo"/> 
                  </Link> 
                  <p> 
                      <i>Golden Sun: Dark Dawn</i> is the third game in the series, featuring Matthew and his quest to 
