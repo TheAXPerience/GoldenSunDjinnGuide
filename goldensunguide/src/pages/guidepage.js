@@ -1,12 +1,20 @@
 import React from 'react';
 import CategorySelector from './category_selector';
 import DjinnList from './djinn_list';
+import axios from 'axios';
 
-function django_fetch(url) {
+const BASE_URL = "http://localhost:8000/api/"
+
+function django_fetch(query) {
     // fetch data from Django (http://localhost:8000/api/${url})
     // parse JSON response to get list
     // return list
-    if (url[0] !== "?") {
+    const url = BASE_URL + query;
+    const response = axios.get(url);
+    return response.data;
+
+    /*
+    if (query[0] !== "?") {
         return [{
             "game": "goldensun",
             "query": "?game=1",
@@ -59,7 +67,7 @@ function django_fetch(url) {
             "pic_url": "/assets/darkdawn/zagan.png"
         }];
     }
-    return [];
+    */
 }
 
 class GuidePage extends React.Component {
