@@ -5,12 +5,12 @@ import axios from 'axios';
 
 const BASE_URL = "http://localhost:8000/api/"
 
-function django_fetch(query) {
+async function django_fetch(query) {
     // fetch data from Django (http://localhost:8000/api/${url})
     // parse JSON response to get list
     // return list
     const url = BASE_URL + query;
-    const response = axios.get(url);
+    const response = await axios.get(url);
     return response.data;
 
     /*
