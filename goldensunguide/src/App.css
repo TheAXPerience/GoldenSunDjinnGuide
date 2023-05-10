@@ -1,38 +1,150 @@
-.App {
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-size: 18px;
+  font-family: monospace;
+}
+
+header {
+  background-color: #E8E8E8;
+  padding: 0;
+  overflow: auto;
+}
+
+header nav {
+  display: flex;
+  justify-content: right;
+}
+
+header nav a {
+  width: 25%;
+  text-align: center;
+  border-left: black 1px solid;
+  border-bottom: black 1px solid;
+  padding: 16px;
+  margin: 0px;
+  display: block;
+  color: black;
+  font-size: 0.9em;
+}
+
+header nav a:hover {
+  background-color: #FFFFFF;
+}
+
+footer {
+  background-color: #E8E8E8;
+  padding: 8px;
+  padding-bottom: 16px;
+  border-top: black 1px solid;
+}
+
+footer p {
+  font-size: 0.8rem;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.center {
+  padding: 16px 10%;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.body {
+  padding: 8px 10%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.logo {
+  height: 128px;
+  width: auto;
+  padding: 8px;
+  margin: 0px;
+  text-align: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.logo img {
+  height: 128px;
+  width: auto;
+  image-rendering: pixelated;
+}
+
+.dropdown {
+  padding: 4px;
+  text-align: center;
+}
+
+.dropdown label {
+  line-height: 36px;
+}
+
+.dropdown select {
+  padding: 8px;
+  text-align: center;
+  background-color: aliceblue;
+}
+
+.djinn {
+  text-align: center;
+  width: 90%;
+  padding: 8px;
+  margin: auto;
+  margin-bottom: 4px;
+}
+
+.djinn section {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+}
+
+.djinn img {
+  margin: auto;
+  width: 64px;
+  height: auto;
+}
+
+.djinn .image {
+  width: 30%;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.djinn .info {
+  width: 70%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.djinn p {
+  text-align: right;
+}
+
+.venus {
+  border: gold 4px solid;
+  border-radius: 8px;
+}
+
+.mercury {
+  border: aqua 4px solid;
+  border-radius: 8px;
+}
+
+.mars {
+  border: orangered 4px solid;
+  border-radius: 8px;
+}
+
+.jupiter {
+  border: mediumpurple 4px solid;
+  border-radius: 8px;
+}
+
+.summon {
+  border: lightgrey 4px solid;
+  border-radius: 8px;
 }

@@ -1,10 +1,20 @@
 import React from 'react';
 
-export default const CategorySelector = (props) => {
+const CategorySelector = (props) => {
     return (
-        <section>
-            <h1>{props.game}</h1>
-            Choose a Category
+        <section className="dropdown">
+            <label htmlFor="category">Choose a Category</label><br/>
+            <select name="category" onChange={(e) => props.changeCategory(e.target.value)}>
+                {props.categories.map((category) => {
+                    return (
+                        <option value={category.query} key={category.label}>
+                            {category.label}
+                        </option>
+                    )
+                })}
+            </select>
         </section>
     );
 }
+
+export default CategorySelector;

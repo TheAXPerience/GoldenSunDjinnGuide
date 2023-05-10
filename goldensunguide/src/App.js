@@ -1,38 +1,34 @@
 import './App.css';
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Header, Footer } from './pages/header'
 import Home from './pages/home.js';
 import GuidePage from './pages/guidepage.js';
+import './App.css';
 
 function App() {
   return (
     <Router>
-        <Switch>
+        <Header />
+        <Routes>
             <Route
                 path='/' exact
-                render={(props) => (
-                    <Home {...props} />
-                )}
+                element={<Home />}
             />
             <Route
                 path='/goldensun'
-                render={(props) => (
-                    <GuidePage {...props} game='goldensun' />
-                )}
+                element={<GuidePage game="goldensun" />}
             />
             <Route
                 path='/thelostage'
-                render={(props) => (
-                    <GuidePage {...props} game='thelostage' />
-                )}
+                element={<GuidePage game="thelostage" />}
             />
             <Route
                 path='/darkdawn'
-                render={(props) => (
-                    <GuidePage {...props} game='darkdawn' />
-                )}
+                element={<GuidePage game="darkdawn" />}
             />
-        </Switch>
+        </Routes>
+        <Footer />
     </Router>
   );
 }

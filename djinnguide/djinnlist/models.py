@@ -25,7 +25,7 @@ class Collectible(models.Model):
     )
 
     def get_picture_url(self):
-        return './assets/' + self.picture_url
+        return '/assets/' + self.picture_url
 
     def __str__(self):
         return f"{self.name} ({self.coltype}, {self.chapter}, {self.get_picture_url()}) - {self.game} @ {self.location}: {self.description}"

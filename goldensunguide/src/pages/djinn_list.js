@@ -1,11 +1,14 @@
 import React from 'react';
-import DjinnBox from 'djinn_box';
+import DjinnBox from './djinn_box';
 
-export default const DjinnList = () => {
+const DjinnList = (props) => {
     return (
-        <>
-            <h1>Djinn List</h1>
-            <DjinnBox />
-        <>
+        <section className="body">
+            {props.djinnlist.map((djinn) => {
+                return <DjinnBox djinn={djinn} key={djinn.name}/>
+            })}
+        </section>
     );
 }
+
+export default DjinnList;
