@@ -12,62 +12,6 @@ async function django_fetch(query) {
     const url = BASE_URL + query;
     const response = await axios.get(url);
     return response.data;
-
-    /*
-    if (query[0] !== "?") {
-        return [{
-            "game": "goldensun",
-            "query": "?game=1",
-            "label": "All"
-        }, {
-            "game": "goldensun",
-            "query": "?game=1&chapter=1",
-            "label": "Chapter 1: Vale"
-        }];
-    } else {
-        return [{
-            "name": "Flint",
-            "game": 1,
-            "coltype": 1,
-            "chapter": 1,
-            "location": "Vale",
-            "description": "Isaac",
-            "pic_url": "/assets/goldensun/venus_djinni.png"
-        }, {
-            "name": "Gust",
-            "game": 1,
-            "coltype": 3,
-            "chapter": 1,
-            "location": "Bilibin",
-            "description": "The sewers",
-            "pic_url": "/assets/goldensun/jupiter_djinni.png"
-        }, {
-            "name": "Chill",
-            "game": 2,
-            "coltype": 4,
-            "chapter": 4,
-            "location": "Gondowan",
-            "description": "West",
-            "pic_url": "/assets/goldensun/mercury_djinni.png"
-        }, {
-            "name": "Forge",
-            "game": 3,
-            "coltype": 2,
-            "chapter": 1,
-            "location": "Camp Camp",
-            "description": "Matthew",
-            "pic_url": "/assets/darkdawn/forge.png"
-        }, {
-            "name": "Zagan",
-            "game": 2,
-            "coltype": 5,
-            "chapter": 2,
-            "location": "Indra",
-            "description": "Cave",
-            "pic_url": "/assets/darkdawn/zagan.png"
-        }];
-    }
-    */
 }
 
 class GuidePage extends React.Component {
@@ -75,14 +19,25 @@ class GuidePage extends React.Component {
         super(props);
         // fetch data for CategorySelector
         this.state = {
-            categories: django_fetch("categories/" + props.game),
+            categories: [],
             djinnlist: [],
             category: ""
         }
     }
 
     componentDidMount() {
-        this.changeCategory(this.state.categories[0].query);
+        django_fetch("categories/" + this.props.game).then(result => {
+            this.setState({
+                categories: result
+            })
+            this.changeCategory(result[0].query);
+        });
+    }
+
+    componentDidUpdate(prevProps) {
+        if (prevProps.game !== this.props.game) {
+            this.componentDidMount();
+        }
     }
 
     changeCategory = (category) => {
@@ -90,9 +45,11 @@ class GuidePage extends React.Component {
             return;
         }
 
-        this.setState({
-            category: category,
-            djinnlist: django_fetch(category)
+        django_fetch(category).then(result => {
+            this.setState({
+                category: category,
+                djinnlist: result
+            });
         });
     }
 

@@ -1,5 +1,17 @@
 # GoldenSunDjinnGuide
 
+## Deploying Production Code
+
+### DJANGO
+
+1. Change the DJANGO_SECRET_KEY in djinnguide/.env to a new key, and DJANGO_DEBUG to *False*
+2. Instead of using *python manage.py runserver 8000* use either *gunicorn --bind 0.0.0.0:8000 djinnguide.wsgi* or *waitress-serve --listen=\*8000 djinnguide.wsgi:application* to deploy
+
+### REACT
+
+1. Ensure connection to Django production server still works
+2. Use *npm run build* to build React app so that it can be accessed via regular index.html
+
 ## Sources
 Though I have played the games multiple times, I had to supplement my information using *Golden Sun Universe* to ensure the types of puzzles, names of locations, etc. were correct.
 * https://goldensunwiki.net/
